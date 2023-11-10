@@ -1,12 +1,11 @@
 const express = require('express');
 const shelterRoutes = require('./routes/shelters');
 const dogRoutes = require('./routes/dogs');
+const adminRoutes = require('./routes/admin');
 const app = express();
 const port = 3000;
 
-// app.get('/', (req, res) => {
-// 	res.send('Hello World!');
-// });
+app.use('/admin', adminRoutes);
 app.use('/shelters', shelterRoutes);
 app.use('/dogs', dogRoutes);
 app.listen(port, () => {
